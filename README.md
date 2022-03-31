@@ -1,2 +1,3 @@
 # devopsdemo
-DevOps Demo
+Docker files
+Terraform code
