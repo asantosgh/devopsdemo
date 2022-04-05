@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: netcat
+  namespace: broadvoice
+  labels:
+    app: netcat
+spec:
+  containers:
+    - name: netcat
+      image: asantoshub/netcat:1.0.0
+      imagePullPolicy: Always
+      ports:
+        - name: sip
+          containerPort: 5060
+          protocol: TCP

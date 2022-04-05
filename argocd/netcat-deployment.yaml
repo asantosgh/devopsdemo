@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: netcat-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/asantosgh/devopsdemo.git 
+    targetRevision: HEAD
+    path: netcatd
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: broadvoice
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
+

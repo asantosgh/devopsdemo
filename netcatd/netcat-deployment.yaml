@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netcat-deployment
+  namespace: broadvoice
+  labels:
+    app: netcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: netcat
+  template:
+    metadata:
+      labels:
+        app: netcat
+    spec:
+      containers:
+      - name: netcat
+        image: asantoshub/netcat:1.0.0
+        imagePullPolicy: Always
+        ports:
+          - name: sip
+            containerPort: 5060
+            protocol: TCP
+        resources:
+          limits:
+            cpu: 300m
+          requests:
+            cpu: 200m
