@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: tcp-services
-  namespace: ingress-nginx
-data:
-  5060: "broadvoice/netcat-service:5060"
