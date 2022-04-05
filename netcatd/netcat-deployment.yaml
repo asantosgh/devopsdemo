@@ -6,7 +6,7 @@ metadata:
   labels:
     app: netcat
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: netcat
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: netcat
-        image: asantoshub/netcat:1.0.0
+        image: asantoshub/netcat:1.0.1
         imagePullPolicy: Always
         ports:
           - name: sip
