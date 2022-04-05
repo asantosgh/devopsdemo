@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: netcat
-        image: asantoshub/netcat:1.0.1
+        image: asantoshub/netcat:1.0.0
         imagePullPolicy: Always
         ports:
           - name: sip
